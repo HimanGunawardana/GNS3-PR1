@@ -1,0 +1,67 @@
+Core-SW(config)#interface ethernet 0/0
+Core-SW(config-if)#switchport trunk encapsulation dot1q
+
+Core-SW(config-if)#switchport mode trunk
+
+
+Core-SW(config)#interface range ethernet 0/1-3
+Core-SW(config-if-range)#switchport trunk encapsulation dot1q
+Core-SW(config-if-range)#switchport mode trunk
+Core-SW(config-if-range)#no shutdown
+Core-SW(config-if-range)#exit
+
+Core-SW(config)#vlan 10
+Core-SW(config-vlan)#name Office
+Core-SW(config-vlan)#exit
+Core-SW(config)#vlan 20
+Core-SW(config-vlan)#name CCTV
+Core-SW(config-vlan)#exit
+Core-SW(config)#vlan 30
+Core-SW(config-vlan)#name Wifi
+Core-SW(config-vlan)#
+Core-SW(config-vlan)#exit
+Core-SW(config)#end
+Core-SW#show vlan
+
+Core-SW(config)#vtp domain bgs.com
+
+Core-SW(config)#vtp version 2
+
+Core-SW(config)#vtp password 1234
+
+Core-SW(config)#vtp mode server
+
+Core-SW(config)# end
+
+Core-SW#show vtp status
+
+===============================================
+
+interface range ethernet 0/1-3
+switchport trunk encapsulation dot1q
+switchport mode trunk
+no shutdown
+exit
+
+vlan 10
+name Office
+exit
+vlan 20
+name CCTV
+exit
+vlan 30
+name Wifi
+exit
+end
+
+vtp domain bgs.com
+
+vtp version 2
+
+vtp password 1234
+
+vtp mode server
+
+end
+==================================================
+

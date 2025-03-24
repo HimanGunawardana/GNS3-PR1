@@ -1,0 +1,74 @@
+Access-SW(config)#interface ethernet 0/0
+Access-SW(config-if)#switchport trunk encapsulation dot1q
+Access-SW(config-if)#switchport mode trunk
+Access-SW(config-if)#no shutdown
+Access-SW(config-if)#exit
+
+Access-SW(config)#vtp domain bgs.com
+Access-SW(config)#vtp version 2
+Access-SW(config)#vtp password 1234
+
+Access-SW(config)#vtp mode client
+Access-SW(config)#end
+
+Access-SW#show vlan brief
+
+
+
+Access-SW(config)#interface ethernet 1/0
+Access-SW(config-if)#switchport mode access
+Access-SW(config-if)#switchport access vlan 10
+Access-SW(config-if)#exit
+Access-SW(config)#
+Access-SW(config)#interface ethernet 2/0
+Access-SW(config-if)#switchport mode access
+Access-SW(config-if)#switchport access vlan 20
+Access-SW(config-if)#exit
+Access-SW(config)#
+Access-SW(config)#interface ethernet 3/0
+Access-SW(config-if)#switchport mode access
+Access-SW(config-if)#switchport access vlan 30
+Access-SW(config-if)#exit
+Access-SW(config)#
+Access-SW(config)#end
+
+
+===================================================================
+interface ethernet 0/0
+switchport trunk encapsulation dot1q
+switchport mode trunk
+no shutdown
+exit
+
+vtp domain bgs.com
+vtp version 2
+vtp password 1234
+
+vtp mode client
+end
+
+Access-SW#show vlan brief
+
+
+
+interface ethernet 1/0
+switchport mode access
+switchport access vlan 10
+exit
+interface ethernet 2/0
+switchport mode access
+switchport access vlan 20
+exit
+interface ethernet 3/0
+switchport mode access
+switchport access vlan 30
+exit
+end
+
+
+
+
+===================================================================
+Traffic
+MOnitor
+FW policy

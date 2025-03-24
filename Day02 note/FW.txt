@@ -1,0 +1,41 @@
+FortiGate-vm64-KVM # config system global
+FortiGate-W164-KVM (global) # set hostname FortiGate-A
+FortiGate-W164-KVM (global) # end
+
+FortiGate-A # config system interface
+FortiGate-A (interface) # edit port1
+FortiGate-A (interface) # set mode static
+FortiGate-A (interface) # set ip 172.20.10.11/28
+FortiGate-A (interface) # end
+FortiGate-A #
+FortiGate-A # show system ha
+------------------------------------------------------------------------------
+
+
+
+===============================================================================
+===============================================================================
+===============================================================================
+
+FortiGate-B # sh sys ha
+FortiGate-B # config system ha
+FortiGate-B (ha) # set group-name HA-Group
+FortiGate-B (ha) # set mode a-a
+FortiGate-B (ha) # set password Test@123
+FortiGate-B (ha) # set hbdev port5 0
+FortiGate-B (ha) # set priority 128
+FortiGate-B (ha) # end
+FortiGate-B # 
+
+
+FortiGate-B # config system ha
+FortiGate-B (ha) # set session-pickup enable
+FortiGate-B (ha) # end
+
+
+
+
+
+
+
+

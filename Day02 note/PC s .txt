@@ -1,0 +1,6 @@
+first start & console ->
+
+PC1> ip dhcp
+
+
+
